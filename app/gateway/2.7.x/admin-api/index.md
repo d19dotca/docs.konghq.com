@@ -449,7 +449,24 @@ upstream_json: |
         "client_certificate": {"id":"ea29aaa3-3b2d-488c-b90c-56df8e0dd8c6"}
     }
 
-upstream_data: |
+curl 'http://localhost:8001/default/upstreams/1397fda2-d665-46fa-a432-52dcb96fcba1/targets' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: en-US,en;q=0.9' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Connection: keep-alive' \
+  -H 'Content-Type: application/json;charset=UTF-8' \
+  -H 'Origin: http://localhost:8002' \
+  -H 'Pragma: no-cache' \
+  -H 'Referer: http://localhost:8002/' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Site: same-site' \
+  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36' \
+  -H 'sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="100", "Google Chrome";v="100"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "macOS"' \
+  --data-raw '{"upstream":{"id":"1397fda2-d665-46fa-a432-52dcb96fcba1"},"target":"www.google.ca","weight":100}' \
+  --compressedata: |
     "data": [{
         "id": "4fe14415-73d5-4f00-9fbc-c72a0fccfcb2",
         "created_at": 1422386534,
@@ -3804,7 +3821,7 @@ Targets can be both [tagged and filtered by tags](#tags).
 {:.indent}
 Attributes | Description
 ---:| ---
-`upstream_d`<br>**required** | The unique identifier of the Upstream that should be associated to the newly-created Target.
+`upstream_id`<br>**required** | The unique identifier of the Upstream that should be associated to the newly-created Target.
 
 
 #### Request Body
